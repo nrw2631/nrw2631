@@ -1,0 +1,45 @@
+//Nick Wetherington
+
+package chpt7Project;
+
+public class Chpt7Project {
+
+	public static void selectionSort(int[] list) {
+		
+		for (int i=1; i<list.length; i++) {
+			int currentMin = list[i];
+			int currentMinIndex = i;
+			
+			for (int j=i+1; j<list.length;j++) {
+				if (currentMin > list[j]) {
+					currentMin = list[j];
+					currentMinIndex = j;
+				}
+			}
+		
+		if (currentMinIndex != i ) {
+			list[currentMinIndex] = list[i];
+			list [i] = currentMin;
+		}
+		
+		}
+	
+	}
+	
+	public static void main(String[] args) {
+		
+		int [] numbers = new int [11];
+		
+		for (int i=1;i<numbers.length; i++) {
+			numbers[i] = (int) (Math.random() *100 +1);
+			System.out.println("The unsorted list is: " + numbers[i]);
+		}
+				
+		selectionSort(numbers);
+		
+		for (int i=1;i<numbers.length;i++) {
+			System.out.print("The sorted list is: " + numbers[i]);
+		}
+	}
+
+}
